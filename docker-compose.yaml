@@ -1,0 +1,12 @@
+version: "3"
+services:
+  db:
+    image: postgres:latest
+    container_name: "postgres"
+    environment:
+      - POSTGRES_PASSWORD=docker 
+      - POSTGRES_DB=node-auth
+      - POSTGRES_USER=postgres
+      - TZ=GMT
+    ports:
+      - 5432:5432

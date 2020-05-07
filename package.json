@@ -1,0 +1,32 @@
+{
+  "name": "tdd-login",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "factory-girl": "^5.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.3",
+    "pg": "^8.0.3",
+    "sequelize": "^5.21.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/jsonwebtoken": "^8.3.9",
+    "faker": "^4.1.0",
+    "jest": "^26.0.1",
+    "sequelize-cli": "^5.5.1",
+    "sqlite3": "^4.2.0",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "dev": "nodemon src/server.js --ignore __tests",
+    "test": "NODE_ENV=test jest",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
+  }
+}
